@@ -32,7 +32,6 @@ class _HospitalTabState extends State<HospitalTab> {
         List<Regional> regional = controller.hospitalDetails.data.data.regional;
 
         List<String> columnHeader = [
-          "State",
           "Rural Hospitals",
           "Rural Beds",
           "Urban Hospitals",
@@ -71,7 +70,7 @@ class _HospitalTabState extends State<HospitalTab> {
                   cellHeight: 40,
                   cellWidth: 120,
                   columnHeaderHeight: 50,
-                  rowHeaderWidth: 0,
+                  rowHeaderWidth: 120,
                 ),
                 tableTheme: lt.DataTableTheme(
                   columnHeaderBorder: Border.all(color: Colors.black38),
@@ -79,9 +78,9 @@ class _HospitalTabState extends State<HospitalTab> {
                   cellBorder: Border.all(color: Colors.black12),
                   cornerBorder: Border.all(color: Colors.black38),
                   columnHeaderColor: darkGrey,
-                  rowHeaderColor: Colors.white60,
+                  rowHeaderColor: darkGrey,
                   cellColor: lightGrey,
-                  cornerColor: Colors.white38,
+                  cornerColor: darkGrey,
                 ),
                 columnHeaderBuilder: (i) => Center(
                   child: AutoSizeText(
@@ -90,11 +89,19 @@ class _HospitalTabState extends State<HospitalTab> {
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                 ),
-                rowHeaderBuilder: (i) => Center(child: Text("Row: ${i + 1}")),
+                rowHeaderBuilder: (i) => Center(
+                  child: Container(
+                    margin: EdgeInsets.symmetric(horizontal: 1),
+                    child: AutoSizeText(
+                      "${regional[i].state}",
+                      maxLines: 1,
+                      style: TextStyle(fontWeight: FontWeight.bold),
+                    ),
+                  ),
+                ),
                 dataCellBuilder: (i, j) {
                   Regional region = regional[i];
                   List<String> cellValues = [
-                    region.state,
                     region.ruralHospitals.toString(),
                     region.ruralBeds.toString(),
                     region.urbanHospitals.toString(),
@@ -109,7 +116,7 @@ class _HospitalTabState extends State<HospitalTab> {
                     maxLines: 1,
                   ));
                 },
-                cornerWidget: Center(child: Text("Corner")),
+                cornerWidget: Center(child: Text("State")),
               ),
             ),
           ],
