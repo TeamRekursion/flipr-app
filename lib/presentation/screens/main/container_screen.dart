@@ -12,7 +12,7 @@ class ContainerScreen extends StatefulWidget {
 
 class _ContainerScreenState extends State<ContainerScreen> {
   int _currIndex = 0;
-  final _pageController = PageController();
+  final _pages = [HealthScreen(), Container(), Container()];
 
   @override
   Widget build(BuildContext context) {
@@ -48,13 +48,7 @@ class _ContainerScreenState extends State<ContainerScreen> {
                 ],
               ),
             ),
-            Expanded(
-              child: PageView(
-                controller: _pageController,
-                physics: NeverScrollableScrollPhysics(),
-                children: [HealthScreen(), Container(), Container()],
-              ),
-            ),
+            Expanded(child: _pages[_currIndex]),
           ],
         ),
       ),
@@ -66,11 +60,6 @@ class _ContainerScreenState extends State<ContainerScreen> {
           onTap: (value) {
             setState(() {
               _currIndex = value;
-              _pageController.animateToPage(
-                _currIndex,
-                duration: Duration(milliseconds: 100),
-                curve: Curves.easeInCubic,
-              );
             });
           },
           items: [
