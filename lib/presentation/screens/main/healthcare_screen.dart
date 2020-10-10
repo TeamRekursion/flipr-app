@@ -1,3 +1,4 @@
+import 'package:flippr_app/presentation/screens/main/college_tab.dart';
 import 'package:flippr_app/presentation/screens/main/hospital_tab.dart';
 import 'package:flippr_app/presentation/themes/theme.dart';
 import 'package:flippr_app/presentation/widgets/search_bar.dart';
@@ -11,7 +12,7 @@ class HealthScreen extends StatefulWidget {
 class _HealthScreenState extends State<HealthScreen>
     with SingleTickerProviderStateMixin {
   TabController _tabController;
-  final _tabs = [HospitalTab(), Container()];
+  final _tabs = [HospitalTab(), CollegeTab()];
   int _currIndex = 0;
 
   @override
@@ -26,8 +27,6 @@ class _HealthScreenState extends State<HealthScreen>
       physics: BouncingScrollPhysics(),
       child: Column(
         children: [
-          SearchBar(),
-          SizedBox(height: 16),
           TabBar(
             controller: _tabController,
             onTap: (value) {
@@ -36,8 +35,8 @@ class _HealthScreenState extends State<HealthScreen>
               });
             },
             tabs: [
-              Tab(text: 'Hospital'),
-              Tab(text: 'Medical College'),
+              Tab(text: 'Hospitals'),
+              Tab(text: 'Medical Colleges'),
             ],
             labelColor: blue,
             unselectedLabelColor: disabledColor,
