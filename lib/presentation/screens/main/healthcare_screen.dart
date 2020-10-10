@@ -1,7 +1,6 @@
 import 'package:flippr_app/presentation/screens/main/college_tab.dart';
 import 'package:flippr_app/presentation/screens/main/hospital_tab.dart';
 import 'package:flippr_app/presentation/themes/theme.dart';
-import 'package:flippr_app/presentation/widgets/search_bar.dart';
 import 'package:flutter/material.dart';
 
 class HealthScreen extends StatefulWidget {

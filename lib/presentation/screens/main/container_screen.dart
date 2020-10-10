@@ -1,6 +1,7 @@
 import 'dart:ui';
 
 import 'package:flippr_app/presentation/screens/main/healthcare_screen.dart';
+import 'package:flippr_app/presentation/screens/main/helpline_screen.dart';
 import 'package:flippr_app/presentation/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -12,7 +13,7 @@ class ContainerScreen extends StatefulWidget {
 
 class _ContainerScreenState extends State<ContainerScreen> {
   int _currIndex = 0;
-  final _pages = [HealthScreen(), Container(), Container()];
+  final _pages = [HealthScreen(), Container(), HelplineScreen()];
 
   @override
   Widget build(BuildContext context) {
