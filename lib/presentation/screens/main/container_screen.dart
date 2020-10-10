@@ -13,7 +13,7 @@ class ContainerScreen extends StatefulWidget {
 
 class _ContainerScreenState extends State<ContainerScreen> {
   int _currIndex = 0;
-  final _pages = [HealthScreen(), Container(), HelplineScreen()];
+  final _pages = [HealthScreen(), HelplineScreen()];
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +57,7 @@ class _ContainerScreenState extends State<ContainerScreen> {
         color: darkGrey,
         child: SalomonBottomBar(
           currentIndex: _currIndex,
-          margin: EdgeInsets.symmetric(horizontal: 8, vertical: 10),
+          margin: EdgeInsets.symmetric(horizontal: 64, vertical: 10),
           onTap: (value) {
             setState(() {
               _currIndex = value;
@@ -67,10 +67,6 @@ class _ContainerScreenState extends State<ContainerScreen> {
             SalomonBottomBarItem(
               icon: Icon(Icons.healing_rounded),
               title: Text('Healthcare Dashboard'),
-            ),
-            SalomonBottomBarItem(
-              icon: Icon(Icons.stacked_line_chart_outlined),
-              title: Text('State Analytics'),
             ),
             SalomonBottomBarItem(
               icon: Icon(Icons.phone),
