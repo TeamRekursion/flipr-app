@@ -1,3 +1,4 @@
+import 'package:flippr_app/di/init_bindings.dart';
 import 'package:flippr_app/presentation/screens/main/container_screen.dart';
 import 'package:flippr_app/presentation/themes/theme.dart';
 import 'package:flutter/material.dart';
@@ -14,6 +15,7 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'Flipr Covid',
       theme: darkTheme,
+      initialBinding: InitBindings(),
       home: ContainerScreen(),
     );
   }

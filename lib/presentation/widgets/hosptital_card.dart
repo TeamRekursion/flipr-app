@@ -5,6 +5,11 @@ import 'package:flippr_app/presentation/themes/theme.dart';
 import 'package:flutter/material.dart';
 
 class HospitalCard extends StatelessWidget {
+  final String type;
+  final int count;
+
+  HospitalCard(this.type, this.count);
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -30,10 +35,10 @@ class HospitalCard extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.center,
                   crossAxisAlignment: CrossAxisAlignment.end,
                   children: [
-                    AutoSizeText("Rural Hospital", maxLines: 1),
+                    AutoSizeText(type, maxLines: 1),
                     SizedBox(height: 2),
                     AutoSizeText(
-                      "456",
+                      count.toString(),
                       style: TextStyle(
                         color: blue,
                         fontWeight: FontWeight.bold,
