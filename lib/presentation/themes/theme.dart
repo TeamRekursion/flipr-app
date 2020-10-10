@@ -24,4 +24,12 @@ final ThemeData darkTheme = ThemeData(
   applyElevationOverlayColor: true,
   brightness: Brightness.dark,
   pageTransitionsTheme: pageTransition,
+  inputDecorationTheme: InputDecorationTheme(
+    filled: true,
+    border: OutlineInputBorder(
+      borderRadius: BorderRadius.circular(8),
+      gapPadding: 16,
+      borderSide: BorderSide.none,
+    ),
+  ),
 );
