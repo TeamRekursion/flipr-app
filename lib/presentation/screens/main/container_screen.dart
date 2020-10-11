@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:flippr_app/presentation/screens/main/healthcare_screen.dart';
 import 'package:flippr_app/presentation/screens/main/helpline_screen.dart';
+import 'package:flippr_app/presentation/screens/main/notifications_screen.dart';
 import 'package:flippr_app/presentation/themes/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:salomon_bottom_bar/salomon_bottom_bar.dart';
@@ -45,7 +46,20 @@ class _ContainerScreenState extends State<ContainerScreen> {
                       ),
                     ],
                   ),
-                  Icon(Icons.notifications_none_rounded, color: blue, size: 30),
+                  GestureDetector(
+                    child: Icon(
+                      Icons.notifications_none_rounded,
+                      color: blue,
+                      size: 30,
+                    ),
+                    onTap: () {
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => NotificationsScreen(),
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
